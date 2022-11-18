@@ -61,16 +61,20 @@ int main(int ac, char **argv){
    		    token = strtok(NULL, delim);
 		}
 
-		argv [1] = NULL;
+		argv [i] = NULL;
 
 
+		/* execute the command */
+		execlp(argv);
+	
+	}
 
 	        printf("%s\n", lineptr);
 
 	  
 	        /* free up allocated memory */
-	        free(lineptr);
-        }
+	        free(lineptr_copy);
+		free(lineptr);
 
 
    return(0);
